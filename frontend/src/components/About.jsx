@@ -1,17 +1,17 @@
 import React from "react";
 import "./LandingPage.css";
-import backgroundImage from "../assets/skin-cancer-image2.jpg"; 
+import backgroundImage from "../assets/skin-cancer-image2.jpg";
 
 const About = () => {
   return (
     <div
       className="landing-container"
-      style={{
-        backgroundImage: `url(${backgroundImage})`,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        backgroundRepeat: "no-repeat",
-      }}
+      // style={{
+      //   backgroundImage: `url(${backgroundImage})`,
+      //   backgroundSize: "cover",
+      //   backgroundPosition: "center",
+      //   backgroundRepeat: "no-repeat",
+      // }}
     >
       <div className="landing-info">
         <div className="info-content">
@@ -41,12 +41,13 @@ const About = () => {
               lesions into different categories, including:
             </p>
             <ul>
-              <li>Melanoma</li>
-              <li>Basal Cell Carcinoma</li>
-              <li>Squamous Cell Carcinoma</li>
               <li>Actinic Keratosis</li>
-              <li>Benign Nevus (mole)</li>
-              <li>Seborrheic Keratosis</li>
+              <li>Basal Cell Carcinoma</li>
+              <li>Benign Keratosis</li>
+              <li>Dermatofibroma</li>
+              <li>Melanoma</li>
+              <li>Nevus</li>
+              <li>Squamous Cell Carcinoma</li>
             </ul>
             <p>
               Upload a clear image of your skin concern, and our system will

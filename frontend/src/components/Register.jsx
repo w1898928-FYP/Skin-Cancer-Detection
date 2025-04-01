@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import "./Register.css";
-import backgroundImage from "../assets/skin-cancer-image2.jpg"; 
+import backgroundImage from "../assets/skin-cancer-image2.jpg";
 
 const Register = () => {
   const [name, setName] = useState("");
@@ -31,12 +31,15 @@ const Register = () => {
   };
 
   return (
-    <div className="login-container" style={{
-            backgroundImage: `url(${backgroundImage})`,
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-            backgroundRepeat: "no-repeat",
-          }}>
+    <div
+      className="login-container"
+      // style={{
+      //   backgroundImage: `url(${backgroundImage})`,
+      //   backgroundSize: "cover",
+      //   backgroundPosition: "center",
+      //   backgroundRepeat: "no-repeat",
+      // }}
+    >
       <div className="login-card">
         <div className="login-header">
           <h2>Create your account</h2>

@@ -2,8 +2,6 @@ import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import "./Register.css";
-import backgroundImage from "../assets/skin-cancer-image2.jpg"; 
-
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -32,12 +30,12 @@ const Login = () => {
   return (
     <div
       className="login-container"
-      style={{
-        backgroundImage: `url(${backgroundImage})`,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        backgroundRepeat: "no-repeat",
-      }}
+      // style={{
+      //   backgroundImage: `url(${backgroundImage})`,
+      //   backgroundSize: "cover",
+      //   backgroundPosition: "center",
+      //   backgroundRepeat: "no-repeat",
+      // }}
     >
       <div className="login-card">
         <div className="login-header">
@@ -87,9 +85,9 @@ const Login = () => {
           </div>
 
           <div className="form-footer">
-            <a href="#" className="form-link">
+            {/* <a href="#" className="form-link">
               Forgot your password?
-            </a>
+            </a> */}
             <a href="/register" className="form-link">
               Create an account
             </a>

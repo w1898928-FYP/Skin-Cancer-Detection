@@ -6,12 +6,13 @@ import backgroundImage from "../assets/skin-cancer-image2.jpg";
 const TermsOfService = () => {
   return (
     <div className="landing-container"
-    style={{
-            backgroundImage: `url(${backgroundImage})`,
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-            backgroundRepeat: "no-repeat",
-          }}>
+    // style={{
+    //         backgroundImage: `url(${backgroundImage})`,
+    //         backgroundSize: "cover",
+    //         backgroundPosition: "center",
+    //         backgroundRepeat: "no-repeat",
+    //       }}
+          >
       <div className="landing-info">
         <div className="info-content">
           <h1>Terms of Service</h1>
@@ -110,7 +111,7 @@ const TermsOfService = () => {
             <p>
               If you have any questions about these Terms, please contact us at:
             </p>
-            <p>legal@skincancerclassification.com</p>
+            <p>Skincancer123@gmail.com</p>
           </div>
         </div>
       </div>

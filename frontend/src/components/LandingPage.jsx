@@ -31,12 +31,12 @@ const LandingPage = () => {
   return (
     <div
       className="landing-container"
-      style={{
-        backgroundImage: `url(${backgroundImage})`, // Add background image
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        backgroundRepeat: "no-repeat",
-      }}
+      // style={{
+      //   backgroundImage: `url(${backgroundImage})`, // Add background image
+      //   backgroundSize: "cover",
+      //   backgroundPosition: "center",
+      //   backgroundRepeat: "no-repeat",
+      // }}
     >
       <div className="landing-hero info-content2">
         <div className="landing-content">
@@ -46,12 +46,12 @@ const LandingPage = () => {
             helps identify potential skin issues quickly and accurately.
           </p>
           <div className="cta-buttons">
-            <Link to="/register" className="cta-button primary">
-              Create Account
+            <Link to="/login" className="cta-button primary">
+              Predict Now
             </Link>
-            <Link to="/login" className="cta-button secondary">
+            {/* <Link to="/login" className="cta-button secondary">
               Sign In
-            </Link>
+            </Link> */}
           </div>
         </div>
         <div className="hero-image">
@@ -117,9 +117,7 @@ const LandingPage = () => {
           <Link to="/about" className="footer-link">
             About
           </Link>
-          <Link to="/privacy" className="footer-link">
-            Privacy Policy
-          </Link>
+
           <Link to="/terms" className="footer-link">
             Terms of Service
           </Link>

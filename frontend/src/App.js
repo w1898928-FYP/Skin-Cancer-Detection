@@ -20,7 +20,7 @@ function App() {
         <Route path="/register" element={<Register />} />
         <Route path="/predict" element={<Predict />} />
         <Route path="/about" element={<About />} />
-        <Route path="/privacy" element={<PrivacyPolicy />} />
+        {/* <Route path="/privacy" element={<PrivacyPolicy />} /> */}
         <Route path="/terms" element={<TermsOfService />} />
       </Routes>
     </Router>

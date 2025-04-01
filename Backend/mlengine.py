@@ -5,9 +5,9 @@ import torch.nn.functional as F
 import numpy as np
 import cv2
 
-class ImprovedCNNNet(nn.Module):
+class NewCNNNet(nn.Module):
     def __init__(self):
-        super(ImprovedCNNNet, self).__init__()
+        super(NewCNNNet, self).__init__()
         self.main = nn.Sequential(
             nn.Conv2d(in_channels=3, out_channels=32, kernel_size=(5,5), stride=(1,1), padding=2, bias=True),
             nn.BatchNorm2d(32),
@@ -21,7 +21,6 @@ class ImprovedCNNNet(nn.Module):
 
             nn.Conv2d(in_channels=64, out_channels=128, kernel_size=(3,3), stride=(1,1), padding=1, bias=True),
             nn.BatchNorm2d(128),
-            
             nn.ReLU(True),
             nn.MaxPool2d(kernel_size=(2,2), stride=(2,2)),
 
@@ -49,13 +48,12 @@ class ImprovedCNNNet(nn.Module):
         )
     
     def forward(self, x):
-        out = self.main(x)
-        return out
+        return self.main(x)
 
 class SkinCancerClassifier:
     def __init__(self, model_path):
         self.device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-        self.model = ImprovedCNNNet().to(self.device)
+        self.model = NewCNNNet().to(self.device)
         self.model.load_state_dict(torch.load(model_path, map_location=self.device)['model_state_dict'])
         self.model.eval()
         
@@ -77,10 +75,7 @@ class SkinCancerClassifier:
         if image is None:
             raise ValueError("Unable to read the image file")
         
-        # Resize image
         resized_image = cv2.resize(image, (new_width, new_height))
-        
-        # Convert to tensor and normalize
         tensor_image = torch.from_numpy(resized_image).float().permute(2, 0, 1).unsqueeze(0)
         
         return tensor_image
@@ -94,7 +89,6 @@ class SkinCancerClassifier:
             probabilities = torch.exp(prediction)
             top_prob, top_class = probabilities.topk(1, dim=1)
         
-        # Get the predicted class
         predicted_class_index = top_class.item()
         predicted_class_name = self.SKIN_CANCER_CLASSES[predicted_class_index]
         confidence = top_prob.item() * 100
